@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_weight="3"
+        app:srcCompat="@drawable/dnd" />
+
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="378dp"
+        android:layout_height="53dp"
+        android:layout_marginVertical="16dp"
+        android:background="#5C5C5C"
+        android:backgroundTint="#383838"
+        android:drawableTint="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:foregroundTint="#FFFFFF"
+        android:gravity="center"
+        android:hint="Introduce nombre del personaje"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FDEEEE"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginVertical="16dp"
+        android:layout_weight="3"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="CLASE DE PERSONAJE"
+        android:textColor="#FFFFFF" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginBottom="36dp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="68dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#A40707"
+            android:fontFamily="sans-serif"
+            android:text="Estadísticas" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#A40707"
+            android:fontFamily="sans-serif"
+            android:text="Habilidades" />
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#AFAFAF"
+        android:fontFamily="sans-serif"
+        android:text="Guardar Personaje" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_weight="3" />
+</LinearLayout>

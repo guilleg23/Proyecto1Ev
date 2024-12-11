@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="227dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/dnd" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="57dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkBoxAtletismo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Atletismo"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxJuegoDeManos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Juego De Manos"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxAcrobacia"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Acrobacia"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkBoxSigilo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Sigilo"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxArcano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Arcano"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxHistoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Historia"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkBoxInvestigacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Investigacion"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxNaturaleza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Naturaleza"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxReligion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Religion"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="73dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxMedicina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Medicina"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPercepcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Percepción"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPerspicacia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Perspicacia"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxSupervivencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Supervivencia"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTratoConAnimales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Trato Con Animales"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEngano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Engaño"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxIntimidacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Intimidación"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxInterpretacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Interpretación"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPersuasion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:text="Persuasión"
+                android:textColor="#FFFFFF"
+                android:textSize="11.8sp" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
