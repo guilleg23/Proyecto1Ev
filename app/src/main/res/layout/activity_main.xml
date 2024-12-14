@@ -100,7 +100,9 @@
         android:layout_marginTop="36dp"
         android:backgroundTint="#AFAFAF"
         android:fontFamily="sans-serif"
-        android:text="Guardar Personaje" />
+        android:text="Guardar Personaje"
+        android:onClick="PulsarBotonGuardarPersonaje" />
+
 
     <Space
         android:layout_width="match_parent"

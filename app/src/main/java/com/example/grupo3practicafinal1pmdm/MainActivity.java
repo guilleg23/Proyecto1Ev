@@ -47,10 +47,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         Intent musicIntent = new Intent(this, MusicService.class);
         startService(musicIntent);
     }
+
+
+
+    public void PulsarBotonGuardarPersonaje(View view) {
+        Intent intent = new Intent(this, Login.class);
+        Bundle bundle = new Bundle();
+
+        bundle.putString("clave1", "Valor String");
+        bundle.putInt("clave2", 123);
+        bundle.putBoolean("clave3", true);
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
+    }
+
+
 
     @Override
     protected void onDestroy() {
