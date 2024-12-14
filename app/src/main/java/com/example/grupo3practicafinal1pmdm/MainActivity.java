@@ -12,7 +12,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +28,24 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro};
     Spinner spinner;
     EditText editTextNombre;
+    private ArrayList<String> habilidadesSeleccionadas;
+
+    private final ActivityResultLauncher<Intent> habilidadesActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+
+                        Bundle bundle = result.getData().getExtras();
+                        if (bundle != null) {
+                            habilidadesSeleccionadas = bundle.getStringArrayList("habilidadesSeleccionadas");
+                        }
+                    }
+                }
+            }
+    );
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +53,13 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-
         editTextNombre = findViewById(R.id.editTextNombre);
-
 
         spinner = findViewById(R.id.spinner);
         TipoPersonajeAdapter adaptador1 = new TipoPersonajeAdapter();
         spinner.setAdapter(adaptador1);
 
-
-        Button buttonHabilidades = findViewById(R.id.button3);
-        buttonHabilidades.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HabilidadesActivity.class);
-                startActivity(intent);
-            }
-        });
+        PulsarBotonHabilidades();
 
         Intent musicIntent = new Intent(this, MusicService.class);
         startService(musicIntent);
@@ -53,20 +67,37 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private void PulsarBotonHabilidades() {
+        Button buttonHabilidades = findViewById(R.id.button3);
+        buttonHabilidades.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HabilidadesActivity.class);
+                habilidadesActivityResultLauncher.launch(intent);
+            }
+        });
+    }
+
+    public void PulsarBotonEstadisticas(View view) {
+
+        Intent intent = new Intent(this, EstadisticasActivity.class);
+        habilidadesActivityResultLauncher.launch(intent);
+
+    }
+
     public void PulsarBotonGuardarPersonaje(View view) {
         Intent intent = new Intent(this, Login.class);
         Bundle bundle = new Bundle();
 
-        bundle.putString("clave1", "Valor String");
-        bundle.putInt("clave2", 123);
+        bundle.putString("NombrePersonaje", obtenerNombrePersonaje());
+        bundle.putString("ClasePersonaje", (String) spinner.getSelectedItem());
+        bundle.putStringArrayList("HabilidadesPersonaje", habilidadesSeleccionadas);
         bundle.putBoolean("clave3", true);
 
         intent.putExtras(bundle);
         startActivity(intent);
         finish();
     }
-
-
 
     @Override
     protected void onDestroy() {
@@ -75,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
         Intent musicIntent = new Intent(this, MusicService.class);
         stopService(musicIntent);
     }
-
 
     public String obtenerNombrePersonaje() {
         return editTextNombre.getText().toString();

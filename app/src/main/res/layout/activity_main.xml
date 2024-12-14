@@ -77,6 +77,7 @@
             android:layout_weight="1"
             android:backgroundTint="#A40707"
             android:fontFamily="sans-serif"
+            android:onClick="PulsarBotonEstadisticas"
             android:text="Estadísticas" />
 
         <Button

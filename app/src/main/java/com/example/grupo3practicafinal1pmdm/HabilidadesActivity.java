@@ -8,16 +8,18 @@ import android.widget.CompoundButton;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class HabilidadesActivity extends AppCompatActivity {
 
     private int selectedCount = 0;
+    private ArrayList<String> habilidadesSeleccionadas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_habilidades);
-
 
         CheckBox[] checkBoxes = new CheckBox[]{
                 findViewById(R.id.checkBoxAtletismo),
@@ -40,24 +42,35 @@ public class HabilidadesActivity extends AppCompatActivity {
                 findViewById(R.id.checkBoxPersuasion)
         };
 
-
         for (CheckBox checkBox : checkBoxes) {
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    String habilidad = buttonView.getText().toString();
                     if (isChecked) {
+                        habilidadesSeleccionadas.add(habilidad);
                         selectedCount++;
 
                         if (selectedCount == 3) {
-                            Intent intent = new Intent(HabilidadesActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                            enviarResultado();
                         }
                     } else {
+                        habilidadesSeleccionadas.remove(habilidad);
                         selectedCount--;
                     }
                 }
             });
         }
+    }
+
+    private void enviarResultado() {
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("habilidadesSeleccionadas", habilidadesSeleccionadas);
+
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
+
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
