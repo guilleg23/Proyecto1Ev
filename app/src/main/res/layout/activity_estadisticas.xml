@@ -7,14 +7,13 @@
     tools:context=".EstadisticasActivity">
 
     <LinearLayout
-        android:layout_width="358dp"
-        android:layout_height="638dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="1dp"
         android:background="#0F0F0F"
         android:orientation="vertical"
+        android:paddingTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,13 +25,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/fuerzaLbl"
-                style="EstadisticasLblStyle"
+                style="@style/EstadisticasLblStyle"
+                android:fontFamily="sans-serif"
                 android:text="Fuerza" />
 
             <EditText
@@ -42,13 +44,15 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/fuerzaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
         </LinearLayout>
 
@@ -58,14 +62,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/destrezaLbl"
-                android:text="Destreza"
-                style="@style/EstadisticasLblStyle" />
+                style="@style/EstadisticasLblStyle"
+                android:fontFamily="sans-serif"
+                android:text="Destreza" />
 
             <EditText
                 android:id="@+id/destrezaEditText"
@@ -74,13 +81,15 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/destrezaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
 
         </LinearLayout>
@@ -91,17 +100,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/constitucionLbl"
+                style="@style/EstadisticasLblStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Constitución"
-                style="@style/EstadisticasLblStyle"/>
+                android:fontFamily="sans-serif"
+                android:text="Constitución" />
 
 
             <EditText
@@ -111,13 +123,15 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/constitucionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
 
         </LinearLayout>
@@ -128,17 +142,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/inteligenciaLbl"
+                style="@style/EstadisticasLblStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Inteligencia"
-                style="@style/EstadisticasLblStyle"/>
+                android:fontFamily="sans-serif"
+                android:text="Inteligencia" />
 
             <EditText
                 android:id="@+id/inteligenciaEditText"
@@ -147,13 +164,15 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/inteligenciaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
 
         </LinearLayout>
@@ -164,17 +183,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/sabiduriaLbl"
+                style="@style/EstadisticasLblStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/sabiduria"
-                style="@style/EstadisticasLblStyle"/>
+                android:fontFamily="sans-serif"
+                android:text="@string/sabiduria" />
 
             <EditText
                 android:id="@+id/sabiduriaEditText"
@@ -183,13 +205,15 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/sabiduriaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
 
         </LinearLayout>
@@ -200,17 +224,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#00121212"
+            android:background="#383838"
             android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/carismaLbl"
+                style="@style/EstadisticasLblStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif"
                 android:text="Carisma"
-                style="@style/EstadisticasLblStyle"
                 tools:ignore="HardcodedText" />
 
             <EditText
@@ -220,15 +247,49 @@
                 android:layout_weight="1"
                 android:width="50dp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#A40707" />
 
             <Button
                 android:id="@+id/carismaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#A40707"
                 android:text="@string/generar" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dadosLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/primerDado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dado1" />
+
+            <ImageView
+                android:id="@+id/segundoDado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dado2" />
+
+            <ImageView
+                android:id="@+id/tercerDado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+
+                app:srcCompat="@drawable/dado3" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
