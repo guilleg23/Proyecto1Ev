@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carismaLbl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2C2C2C"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:id="@+id/TituloBox"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="40dp"
+        android:background="#434343"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:id="@+id/Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/agdasima"
+            android:text="@string/creador_de_personajes_de_dnd"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nombreSetLbl"
+        android:layout_width="409dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/agdasima"
+        android:text="@string/introduzca_su_nombre"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TituloBox" />
+
+    <EditText
+        android:id="@+id/nombreEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_weight="1"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/agdasima"
+        android:hint="@string/nombre"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#757575"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreSetLbl" />
+
+    <Button
+        android:id="@+id/crearPersonajeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:onClick="CrearPersonaje"
+        android:text="@string/crear_un_personaje_de_dnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Grupo3PracticaFinal1PMDM</string>
+    <string name="introduzca_su_nombre">Introduzca su nombre:</string>
+    <string name="nombre">Nombre</string>
+    <string name="crear_un_personaje_de_dnd">Crear un personaje de DnD</string>
+    <string name="creador_de_personajes_de_dnd">Creador de Personajes de DnD</string>
+    <string name="generar">Generar</string>
+    <string name="sabiduria">Sabiduria</string>
 </resources>
