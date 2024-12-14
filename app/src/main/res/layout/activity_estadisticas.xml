@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EstadisticasActivity">
+
+    <LinearLayout
+        android:layout_width="358dp"
+        android:layout_height="638dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="#0F0F0F"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/fuerzaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/fuerzaLbl"
+                style="EstadisticasLblStyle"
+                android:text="Fuerza" />
+
+            <EditText
+                android:id="@+id/fuerzaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/fuerzaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/DestrezaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/destrezaLbl"
+                android:text="Destreza"
+                style="@style/EstadisticasLblStyle" />
+
+            <EditText
+                android:id="@+id/destrezaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/destrezaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ConstitucionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/constitucionLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Constitución"
+                style="@style/EstadisticasLblStyle"/>
+
+
+            <EditText
+                android:id="@+id/constitucionEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/constitucionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/InteligenciaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/inteligenciaLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inteligencia"
+                style="@style/EstadisticasLblStyle"/>
+
+            <EditText
+                android:id="@+id/inteligenciaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/inteligenciaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/SabiduriaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/sabiduriaLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sabiduria"
+                style="@style/EstadisticasLblStyle"/>
+
+            <EditText
+                android:id="@+id/sabiduriaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/sabiduriaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/CarismaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00121212"
+            android:orientation="horizontal"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/carismaLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Carisma"
+                style="@style/EstadisticasLblStyle"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/carismaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="50dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/carismaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/generar" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
