@@ -103,6 +103,7 @@ String Usuario = "";
             String a = nombresEstadisticas.get(i) + " " + estadisticas.getInt(nombresEstadisticas.get(i));
             stat[i].setText(a);
         }
+        Log.d("hola","Habilidades:"+ "\n");
         for (int i = 0; i <habilidadesSeleccionadas.size() ; i++) {
             Log.d("hola", habilidadesSeleccionadas.get(i));
             aby[i].setText(habilidadesSeleccionadas.get(i));
