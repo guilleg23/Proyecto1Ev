@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
     int[] imagenPersonaje = {R.drawable.bardo, R.drawable.barbaro, R.drawable.brujo, R.drawable.clerigo, R.drawable.druida, R.drawable.explorador,
             R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro};
     Spinner spinner;
-    EditText editTextNombre;
+    TextView editTextNombre;
     private Bundle bundleFinal = new Bundle();
-
-
+    Boolean completadoEstadisticas = false;
+    Boolean completadoHabilidades = false;
 
     private final ActivityResultLauncher<Intent> habilidadesActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -45,22 +46,29 @@ public class MainActivity extends AppCompatActivity {
                         if (bundle != null) {
 
                             if (bundle.getString("Ventana").equals("Estadisticas")){
-
+                                completadoEstadisticas = true;
                                 bundleFinal.putBundle("Estadisticas", bundle);
                                 ArrayList <String> nombresEstadisticas = bundle.getStringArrayList("NombresEstadisticas");
-                                for (String x : nombresEstadisticas) {
+                               Button botonEstadisticas = findViewById(R.id.button2);
+                               botonEstadisticas.setEnabled(false);
+/*                                for (String x : nombresEstadisticas) {
                                     String TAG = "MiActividad";
                                     Log.d(TAG, x + " " + bundle.getInt(x));
 
                                 }
+                                */
+
                             } else {
+                                completadoHabilidades = true;
                                 bundleFinal.putBundle("Habilidades", bundle);
                                 String[] a = bundle.getStringArrayList("habilidadesSeleccionadas").toArray(new String[0]);
+
+                                /*
                                 for (String x : a) {
                                     String TAG = "MiActividad"; // Define un tag para identificar el log
                                     Log.d(TAG, "Este es un mensaje de depuracion " + x);
                                 }
-
+*/
                             }
                         }
 
@@ -110,14 +118,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void PulsarBotonGuardarPersonaje(View view) {
         Intent intent = new Intent(this, Login.class);
+        if (!editTextNombre.getText().toString().isEmpty() && completadoEstadisticas && completadoHabilidades){
+            bundleFinal.putString("NombrePersonaje", obtenerNombrePersonaje());
+            bundleFinal.putString("ClasePersonaje", (String) spinner.getSelectedItem());
 
+            intent.putExtras(bundleFinal);
+            setResult(RESULT_OK, intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Faltan datos por completar", Toast.LENGTH_SHORT).show();
+        }
 
-        bundleFinal.putString("NombrePersonaje", obtenerNombrePersonaje());
-        bundleFinal.putString("ClasePersonaje", (String) spinner.getSelectedItem());
-
-        intent.putExtras(bundleFinal);
-        setResult(RESULT_OK, intent);
-        finish();
     }
 
     @Override

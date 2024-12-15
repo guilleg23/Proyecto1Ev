@@ -61,10 +61,10 @@ String Usuario = "";
         Intent intent = new Intent(this, MainActivity.class);
         Usuario =  nombreEditText.getText().toString();
         if (!Usuario.isEmpty()){
-
-        }else{
             intent.putExtra("nombre",Usuario);
             startForResult.launch(intent);
+        }else{
+
         }
     }
 
