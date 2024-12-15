@@ -60,21 +60,27 @@ String Usuario = "";
         nombreEditText = findViewById(R.id.nombreEditText);
         Intent intent = new Intent(this, MainActivity.class);
         Usuario =  nombreEditText.getText().toString();
-        intent.putExtra("nombre",Usuario);
-        startForResult.launch(intent);
+        if (!Usuario.isEmpty()){
+
+        }else{
+            intent.putExtra("nombre",Usuario);
+            startForResult.launch(intent);
+        }
     }
 
     private void imprimirPersonaje(String nombre, String clase,
                                    Bundle estadisticas, Bundle habilidades){
 
         ArrayList<String> nombresEstadisticas = estadisticas.getStringArrayList("NombresEstadisticas");
-
+        ArrayList<String> habilidadesSeleccionadas = habilidades.getStringArrayList("habilidadesSeleccionadas");
         Log.d("hola","Usuario: " + Usuario + "\n"+
                             "Nombre: " +nombre + "\n" + "Clase: " + clase +"\n" +
                             "Estadisticas:"+ "\n");
         for (int i = 0; i <nombresEstadisticas.size() ; i++) {
             Log.d("hola",nombresEstadisticas.get(i) + " " + estadisticas.getInt(nombresEstadisticas.get(i)));
         }
-
+        for (int i = 0; i <habilidadesSeleccionadas.size() ; i++) {
+            Log.d("hola", habilidadesSeleccionadas.get(i));
+        }
     }
 }
