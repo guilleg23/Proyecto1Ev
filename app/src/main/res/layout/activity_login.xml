@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#000000"
+    tools:context=".Login">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:id="@+id/LayoutLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".Login">
+>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -14,6 +21,8 @@
         android:layout_height="128dp"
         android:layout_marginTop="20dp"
         android:layout_weight="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/dnd" />
 
@@ -95,3 +104,193 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/OverlayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/UsuarioOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuario: "
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/UsuarioFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/NombreOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: "
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/NombreFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ClaseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ClaseOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clase: "
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ClaseFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/HabilidadesOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="Habilidades: "
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/habilidad1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/habilidad2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/habilidad3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/EstadisticasOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="Estadisticas: "
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/fuerzaOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/destrezaOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/constitucionOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/inteligenciaOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/sabiduriaOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/carismaOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textColor="#A40707"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/CerrarBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#A40707"
+            android:onClick="CerrarLayout"
+            android:text="Cerrar" />
+
+    </LinearLayout>
+
+</FrameLayout>

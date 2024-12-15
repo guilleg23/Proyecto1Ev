@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -15,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -64,23 +68,50 @@ String Usuario = "";
             intent.putExtra("nombre",Usuario);
             startForResult.launch(intent);
         }else{
-
+            Toast.makeText(this, "Escribe el Nombre!", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void imprimirPersonaje(String nombre, String clase,
                                    Bundle estadisticas, Bundle habilidades){
-
+        LinearLayout lay = findViewById(R.id.OverlayLayout);
+        lay.setVisibility(View.VISIBLE);
         ArrayList<String> nombresEstadisticas = estadisticas.getStringArrayList("NombresEstadisticas");
         ArrayList<String> habilidadesSeleccionadas = habilidades.getStringArrayList("habilidadesSeleccionadas");
         Log.d("hola","Usuario: " + Usuario + "\n"+
                             "Nombre: " +nombre + "\n" + "Clase: " + clase +"\n" +
                             "Estadisticas:"+ "\n");
+        TextView usr = findViewById(R.id.UsuarioFinal);
+        TextView nom =  findViewById(R.id.NombreFinal);
+        TextView cla = findViewById(R.id.ClaseFinal);
+        usr.setText(Usuario);
+        nom.setText(nombre);
+        cla.setText(clase);
+        TextView aby1 = findViewById(R.id.habilidad1);
+        TextView aby2 = findViewById(R.id.habilidad2);
+        TextView aby3 = findViewById(R.id.habilidad3);
+        TextView[] aby = {aby1,aby2,aby3};
+        TextView stat1 = findViewById(R.id.fuerzaOverlay);
+        TextView stat2 = findViewById(R.id.destrezaOverlay);
+        TextView stat3 = findViewById(R.id.constitucionOverlay);
+        TextView stat4 = findViewById(R.id.inteligenciaOverlay);
+        TextView stat5 = findViewById(R.id.sabiduriaOverlay);
+        TextView stat6 = findViewById(R.id.carismaOverlay);
+        TextView[] stat ={stat1,stat2,stat3,stat4,stat5,stat6};
         for (int i = 0; i <nombresEstadisticas.size() ; i++) {
             Log.d("hola",nombresEstadisticas.get(i) + " " + estadisticas.getInt(nombresEstadisticas.get(i)));
+            String a = nombresEstadisticas.get(i) + " " + estadisticas.getInt(nombresEstadisticas.get(i));
+            stat[i].setText(a);
         }
         for (int i = 0; i <habilidadesSeleccionadas.size() ; i++) {
             Log.d("hola", habilidadesSeleccionadas.get(i));
+            aby[i].setText(habilidadesSeleccionadas.get(i));
+
         }
+
+    }
+    public void CerrarLayout(View view){
+        LinearLayout a = findViewById(R.id.OverlayLayout);
+        a.setVisibility(View.GONE);
     }
 }
