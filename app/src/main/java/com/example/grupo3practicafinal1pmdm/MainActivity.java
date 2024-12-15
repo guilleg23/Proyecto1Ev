@@ -43,9 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
                         Bundle bundle = result.getData().getExtras();
                         if (bundle != null) {
-                            if (bundle.getString("Ventana").equals("Estadisticas")){
-                                bundleFinal.putBundle("Estadisticas", bundle);
 
+                            if (bundle.getString("Ventana").equals("Estadisticas")){
+
+                                bundleFinal.putBundle("Estadisticas", bundle);
+                                ArrayList <String> nombresEstadisticas = bundle.getStringArrayList("NombresEstadisticas");
+                                for (String x : nombresEstadisticas) {
+                                    String TAG = "MiActividad";
+                                    Log.d(TAG, x + " " + bundle.getInt(x));
+
+                                }
                             } else {
                                 bundleFinal.putBundle("Habilidades", bundle);
                                 String[] a = bundle.getStringArrayList("habilidadesSeleccionadas").toArray(new String[0]);

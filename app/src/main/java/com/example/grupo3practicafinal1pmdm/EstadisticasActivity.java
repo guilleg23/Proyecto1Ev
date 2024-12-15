@@ -15,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
@@ -23,6 +24,8 @@ public class EstadisticasActivity extends AppCompatActivity {
     private Random random = new Random();
     private int generated = 0 ;
     private Bundle bundle;
+    ArrayList <String> nombresEst = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         Button boton = findViewById(botonX);
         EditText editText = findViewById(editTextX);
         TextView label = findViewById(lblX);
+        nombresEst.add(label.getText().toString());
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +76,7 @@ public class EstadisticasActivity extends AppCompatActivity {
     }
     private void cargarVista(){
         Intent intent = new Intent( );
+        intent.putStringArrayListExtra("NombresEstadisticas", nombresEst);
         intent.putExtras(bundle);
         setResult(RESULT_OK,intent);
         finish();
