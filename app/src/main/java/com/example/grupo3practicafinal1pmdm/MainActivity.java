@@ -115,9 +115,8 @@ public class MainActivity extends AppCompatActivity {
         bundleFinal.putString("NombrePersonaje", obtenerNombrePersonaje());
         bundleFinal.putString("ClasePersonaje", (String) spinner.getSelectedItem());
 
-
         intent.putExtras(bundleFinal);
-        startActivity(intent);
+        setResult(RESULT_OK, intent);
         finish();
     }
 

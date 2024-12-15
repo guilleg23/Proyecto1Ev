@@ -2,6 +2,7 @@ package com.example.grupo3practicafinal1pmdm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class Login extends AppCompatActivity {
 private TextView nombreEditText;
@@ -38,14 +41,15 @@ String Usuario = "";
                     if (result.getResultCode() == Login.RESULT_OK && result.getData() != null) {
                         Bundle bundle = result.getData().getExtras();
                         if(bundle != null){
+                            Log.d("hola", "onActivityResult: OK ");
                             nombreEditText = findViewById(R.id.nombreEditText);
                             nombreEditText.setHint("Nombre");
                             nombreEditText.setText("");
-                            String nombrePersonaje = bundle.getString("");
-                            String clase = bundle.getString("");
-                            Bundle stats = bundle.getBundle("");
-                            Bundle habilidades = bundle.getBundle("");
-
+                            String nombrePersonaje = bundle.getString("NombrePersonaje");
+                            String clase = bundle.getString("ClasePersonaje");
+                            Bundle stats = bundle.getBundle("Estadisticas");
+                            Bundle habilidades = bundle.getBundle("Habilidades");
+                            imprimirPersonaje(nombrePersonaje,clase,stats,habilidades);
                         }
                     }
                 }
@@ -62,18 +66,15 @@ String Usuario = "";
 
     private void imprimirPersonaje(String nombre, String clase,
                                    Bundle estadisticas, Bundle habilidades){
-        System.out.println("Usuario: " + Usuario + "\n"+
+
+        ArrayList<String> nombresEstadisticas = estadisticas.getStringArrayList("NombresEstadisticas");
+
+        Log.d("hola","Usuario: " + Usuario + "\n"+
                             "Nombre: " +nombre + "\n" + "Clase: " + clase +"\n" +
-                            "Estadisticas:"+ "\n"+
-                            "Fuerza:"+ estadisticas.getString("") +
-                            "Destreza:"+ estadisticas.getString("") +
-                            "Constitucion:"+ estadisticas.getString("") +
-                            "Inteligencia:"+ estadisticas.getString("") +
-                            "Sabiduria:"+ estadisticas.getString("") +
-                            "Carisma:"+ estadisticas.getString("")
+                            "Estadisticas:"+ "\n");
+        for (int i = 0; i <nombresEstadisticas.size() ; i++) {
+            Log.d("hola",nombresEstadisticas.get(i) + " " + estadisticas.getInt(nombresEstadisticas.get(i)));
+        }
 
-
-
-        );
     }
 }
