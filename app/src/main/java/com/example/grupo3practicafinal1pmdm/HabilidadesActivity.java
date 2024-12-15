@@ -66,7 +66,7 @@ public class HabilidadesActivity extends AppCompatActivity {
     private void enviarResultado() {
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("habilidadesSeleccionadas", habilidadesSeleccionadas);
-
+        bundle.putString("Ventana", "habilidades");
         Intent intent = new Intent();
         intent.putExtras(bundle);
 

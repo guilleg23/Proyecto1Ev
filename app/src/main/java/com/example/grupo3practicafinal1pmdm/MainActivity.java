@@ -2,6 +2,7 @@ package com.example.grupo3practicafinal1pmdm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro};
     Spinner spinner;
     EditText editTextNombre;
-    private ArrayList<String> habilidadesSeleccionadas;
+    private Bundle bundleFinal = new Bundle();
+
+
 
     private final ActivityResultLauncher<Intent> habilidadesActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -39,8 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
                         Bundle bundle = result.getData().getExtras();
                         if (bundle != null) {
-                            habilidadesSeleccionadas = bundle.getStringArrayList("habilidadesSeleccionadas");
+                            if (bundle.getString("Ventana").equals("Estadisticas")){
+                                bundleFinal.putBundle("Estadisticas", bundle);
+
+                            } else {
+                                bundleFinal.putBundle("Habilidades", bundle);
+                                String[] a = bundle.getStringArrayList("habilidadesSeleccionadas").toArray(new String[0]);
+                                for (String x : a) {
+                                    String TAG = "MiActividad"; // Define un tag para identificar el log
+                                    Log.d(TAG, "Este es un mensaje de depuracion " + x);
+                                }
+
+                            }
                         }
+
                     }
                 }
             }
@@ -87,14 +103,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void PulsarBotonGuardarPersonaje(View view) {
         Intent intent = new Intent(this, Login.class);
-        Bundle bundle = new Bundle();
 
-        bundle.putString("NombrePersonaje", obtenerNombrePersonaje());
-        bundle.putString("ClasePersonaje", (String) spinner.getSelectedItem());
-        bundle.putStringArrayList("HabilidadesPersonaje", habilidadesSeleccionadas);
-        bundle.putBoolean("clave3", true);
 
-        intent.putExtras(bundle);
+        bundleFinal.putString("NombrePersonaje", obtenerNombrePersonaje());
+        bundleFinal.putString("ClasePersonaje", (String) spinner.getSelectedItem());
+
+
+        intent.putExtras(bundleFinal);
         startActivity(intent);
         finish();
     }
