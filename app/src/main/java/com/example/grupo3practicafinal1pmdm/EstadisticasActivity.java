@@ -73,7 +73,7 @@ public class EstadisticasActivity extends AppCompatActivity {
     private void cargarVista(){
         Intent intent = new Intent( );
         intent.putExtras(bundle);
-        setResult(RESULT_OK);
+        setResult(RESULT_OK,intent);
         finish();
     }
     private int[] ranNums() {
