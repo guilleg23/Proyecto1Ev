@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Login extends AppCompatActivity {
 private TextView nombreEditText;
+String Usuario = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +35,17 @@ private TextView nombreEditText;
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Login.RESULT_OK) {
-                        Intent intent = result.getData();
-                        if(intent != null){
+                    if (result.getResultCode() == Login.RESULT_OK && result.getData() != null) {
+                        Bundle bundle = result.getData().getExtras();
+                        if(bundle != null){
                             nombreEditText = findViewById(R.id.nombreEditText);
                             nombreEditText.setHint("Nombre");
                             nombreEditText.setText("");
+                            String nombrePersonaje = bundle.getString("");
+                            String clase = bundle.getString("");
+                            Bundle stats = bundle.getBundle("");
+                            Bundle habilidades = bundle.getBundle("");
+
                         }
                     }
                 }
@@ -49,7 +55,25 @@ private TextView nombreEditText;
     public void CrearPersonaje(View view){
         nombreEditText = findViewById(R.id.nombreEditText);
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("nombre",nombreEditText.getText().toString());
+        Usuario =  nombreEditText.getText().toString();
+        intent.putExtra("nombre",Usuario);
         startForResult.launch(intent);
+    }
+
+    private void imprimirPersonaje(String nombre, String clase,
+                                   Bundle estadisticas, Bundle habilidades){
+        System.out.println("Usuario: " + Usuario + "\n"+
+                            "Nombre: " +nombre + "\n" + "Clase: " + clase +"\n" +
+                            "Estadisticas:"+ "\n"+
+                            "Fuerza:"+ estadisticas.getString("") +
+                            "Destreza:"+ estadisticas.getString("") +
+                            "Constitucion:"+ estadisticas.getString("") +
+                            "Inteligencia:"+ estadisticas.getString("") +
+                            "Sabiduria:"+ estadisticas.getString("") +
+                            "Carisma:"+ estadisticas.getString("")
+
+
+
+        );
     }
 }
